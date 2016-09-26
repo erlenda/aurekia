@@ -1,0 +1,12 @@
+<template>
+
+  <h1>${heading}</h1>
+
+  <form submit.trigger="addTodo()">
+    <input type="text" value.bind="todoDescription" />
+    <button type="submit">Add todo</button>
+  </form>
+
+  <compose view="src/todo.html" model.bind="todos" />
+
+</template>
