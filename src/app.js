@@ -1,25 +1,31 @@
-import {Todo} from './todo';
+import {Movie} from './movie/movie';
+import {inject} from 'aurelia-framework';
+import {MovieService} from './movie/movieService';
 
+//@inject(MovieService)
 export class App {
-  constructor() {
-    this.heading = 'Todos';
-    this.todos = [];
-    this.todoDescription = '';
+  static inject() { return [MovieService]}
+  constructor(MovieService) {
+    this.heading = 'Movies';
+    this.movies = [];
+    this.movieTitle = '';
+    this.movieService = MovieService;
   }
-  addTodo() {
-    if(this.todoDescription){
-      this.todos.push(new Todo(this.todoDescription));
-      this.todoDescription = '';
+  addMovie() {
+    if(this.movieTitle){
+      this.movie.push(new Movie(this.movieTitle));
+      this.movieTitle = '';
     }
   }
-  removeTodo(todo) {
-    let index = this.todos.indexOf(todo);
+  removeMovie(todo) {
+    let index = this.movies.indexOf(todo);
     if(index !== 1) {
-      this.todos.splice(index, 1);
+      this.movies.splice(index, 1);
     }
   }
-  activate(model) {
-        // model is the passed through object
-        console.log('asd');
-    }
+
+  fill() {
+    console.log('fill...');
+    this.movieService.fill();
+  }
 }

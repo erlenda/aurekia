@@ -1,0 +1,11 @@
+<template>
+  <ul>
+    <li repeat.for="movie of movies">
+      <input type="checkbox" checked.bind="movie.done" />
+      <span css="text-decoration: ${movie.done ? 'line-through' : 'none'}">
+        ${movie.title}
+      </span>
+      <button click.trigger="removeMovie(movie)">Remove</button>
+    </li>
+  </ul>
+</template>

@@ -2,11 +2,12 @@
 
   <h1>${heading}</h1>
 
-  <form submit.trigger="addTodo()">
-    <input type="text" value.bind="todoDescription" />
-    <button type="submit">Add todo</button>
+  <button bind.trigger="fill()">Fill</button>
+
+  <form submit.trigger="addMovie()">
+    <input type="text" value.bind="movieTitle" />
+    <button type="submit">Add movie</button>
   </form>
 
-  <compose view="src/todo.html" model.bind="todos" />
-
+  <compose view="src/movie/movie.html" model.bind="movies" />
 </template>

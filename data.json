@@ -1,0 +1,7 @@
+{
+  "movies" : [
+    {"name":"kongens nei", "imdbid":"tt4353996"},
+    {"name":"american honey", "imdbid":"tt3721936"},
+    {"name":"snowden", "imdbid":"tt3774114"},
+  ]
+}
