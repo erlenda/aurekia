@@ -2,10 +2,11 @@
 
   <h1>${heading}</h1>
 
-  <button bind.trigger="fill()">Fill</button>
+  <button click.trigger="fill()">Fill</button>
 
   <form submit.trigger="addMovie()">
     <input type="text" value.bind="movieTitle" />
+    <input type="number" value.bind="year"/>
     <button type="submit">Add movie</button>
   </form>
 

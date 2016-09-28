@@ -1,17 +1,24 @@
-import {HttpClient} from 'aurelia-http-client';
-import {inject} from 'aurelia-framework';
 
-//@inject(HttpClient)
 export class MovieService {
-  static inject() { return [HttpClient]}
-  constructor(HttpClient) {
-    this.httpClient = HttpClient;
+  constructor() {
+    $.get('data.json').then(data => {
+      this.secret = data.secret;
+    });
+  }
+
+  getSecret() {
+    return this.secret;
   }
 
   fill() {
-    this.httpClient.get('../../../data.json')
+    return $.get('data.json')
       .then(data => {
-        console.debug(data.movies)
+        return data.movies.map((movie)=> {
+          return $.get("http://www.omdbapi.com/?i="+movie.imdbid+"&y=&plot=short&r=json&apikey="+this.secret)
+            .then(movieResult => {
+              return movieResult;
+            });
+        });
       });
   }
 }

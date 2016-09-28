@@ -1,11 +1,14 @@
 <template>
+  <require from="material.indigo-pink.min.css"></require>
   <ul>
     <li repeat.for="movie of movies">
+      <button
+        click.trigger="removeMovie(movie)"
+        class="mdl-button mdl-button--raised mdl-button--accent">Remove</button>
       <input type="checkbox" checked.bind="movie.done" />
       <span css="text-decoration: ${movie.done ? 'line-through' : 'none'}">
-        ${movie.title}
+        ${movie.year} - ${movie.title}
       </span>
-      <button click.trigger="removeMovie(movie)">Remove</button>
     </li>
   </ul>
 </template>

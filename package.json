@@ -1,0 +1,23 @@
+{
+  "name": "aurekia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erlenda/aurekia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erlenda/aurekia/issues"
+  },
+  "homepage": "https://github.com/erlenda/aurekia#readme",
+  "devDependencies": {
+    "aurelia-fetch-client": "^1.0.0",
+    "aurelia-http-client": "^1.0.0"
+  }
+}
